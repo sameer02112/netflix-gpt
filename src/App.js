@@ -1,10 +1,8 @@
-import './App.css';
+import Body from './components/Body';
 
 function App() {
   return (
-    <div className="App">
-      <h3 className="font-bold text-3xl text-green-800">Netfllix GPT🚀</h3>
-    </div>
+    <Body/>
   );
 }
 
