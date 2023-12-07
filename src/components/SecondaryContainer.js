@@ -7,8 +7,9 @@ import useTopRatedMovies from '../hooks/useTopRatedMovies';
 const SecondaryContainer = () => {
 
     const movies = useSelector(store => store.movies);
-    console.log('movies',movies);
+    const user = useSelector(store => store.user);
 
+    if(!user) return;
   
     return (
         <div className="bg-black">

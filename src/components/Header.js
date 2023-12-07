@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router';
 import { addUser } from '../utils/userSlice';
 import { onAuthStateChanged } from "firebase/auth";
 import { LOGO } from '../utils/constants';
+import { toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -38,6 +39,10 @@ const Header = () => {
           
     }
 
+    const handleGptSearchClick = () => {
+      dispatch(toggleGptSearchView());
+    }
+
     return (
         <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-20 w-full flex justify-between">
             <img src={LOGO}
@@ -46,6 +51,7 @@ const Header = () => {
                  />
             {user && 
                 <div className="flex p-2 ">
+                  <button className="py-2 px-4 m-2 text-white bg-purple-500 rounded-lg" onClick={handleGptSearchClick}>GPT Search</button>
                     <img src={user?.photoURL}
                     alt="user-icon"
                     className="w-12 h-12"
